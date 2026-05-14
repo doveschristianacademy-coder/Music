@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Piano 100 Study Guide | DCA</title>
+    <style>
+        /* Styles preserved from Biology Study Guide [cite: 383-444] */
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f5f5f0; padding: 20px; }
+        .guide-container { max-width: 900px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .guide-header { background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+        .section-title { color: #2180B0; border-bottom: 3px solid #D4AF37; margin: 20px 0; font-size: 22px; }
+        .concept-card { background: #fafaf8; border: 1px solid #e0d5c5; padding: 15px; border-radius: 6px; margin-bottom: 10px; }
+        .study-tip { background-color: #d4edda; border-left: 4px solid #28a745; padding: 12px; margin: 15px 0; } [cite: 424, 425]
+    </style>
+</head>
+<body>
+
+<div class="guide-container">
+    <div class="guide-header">
+        <div class="school-name">DCA | DISCOVERY ASSESSMENT [cite: 445]</div>
+        <h1>Piano 100 Study Guide</h1>
+        <p>Foundations of Technique, Theory, and Performance</p>
+    </div>
+
+    <div style="padding: 30px;">
+        <div class="intro-box" style="background: #FFF9F0; padding: 20px; border-left: 4px solid #D4AF37;">
+            <strong>🎹 Strategy for Success:</strong><br>
+            This guide covers the 30-question assessment and provides the checklist for your Performance Portfolio submission[cite: 446, 447].
+        </div>
+
+        <div class="section-title">1. Technical Fundamentals</div>
+        <div class="concept-card">
+            <span class="concept-term">Major Scale Pattern:</span> W-W-H-W-W-W-H (Whole and Half steps).
+        </div>
+        <div class="concept-card">
+            <span class="concept-term">Posture:</span> Ensure bench height allows elbows to be slightly above the keys with feet flat on the floor.
+        </div>
+
+        <div class="section-title">2. Music Theory & Notation</div>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+            <tr style="background: #2180B0; color: white;">
+                <th style="padding: 10px; text-align: left;">Term</th>
+                <th style="padding: 10px; text-align: left;">Definition</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 10px;"><strong>Legato</strong></td>
+                <td style="border: 1px solid #ccc; padding: 10px;">To play smooth and connected notes.</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 10px;"><strong>Staccato</strong></td>
+                <td style="border: 1px solid #ccc; padding: 10px;">Short, detached notes.</td>
+            </tr>
+        </table>
+
+        <div class="section-title">3. Performance Portfolio Requirements</div>
+        <div class="concept-card" style="border-left: 5px solid #2180B0;">
+            <strong>Mandatory Submission:</strong> Your Google Drive folder must include:
+            <ul>
+                <li>Major Scales (C, G, D, A, E) - 2 Octaves, hands together.</li>
+                <li>One Baroque or Classical era piece (Memorized).</li>
+                <li>One Modern or Romantic era piece.</li>
+            </ul>
+        </div>
+        <div class="study-tip">
+            <strong>Permissions Check:</strong> Set your Google Drive folder to "Anyone with the link can view" to avoid a zero on the performance portion! [cite: 424, 427]
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); } [cite: 483]
+</script>
+</body>
+</html>
