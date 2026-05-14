@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano 100 Final - Doves Christian Academy</title>
+    <style>
+        /* Styles remain identical to original template for consistency [cite: 246-312] */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #FFFFFF; padding: 20px; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
+        body.dark-mode { background-color: #1a1a1a; color: #e0e0e0; }
+        .test-container { max-width: 900px; margin: 0 auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .test-header { background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); color: white; padding: 30px; border-radius: 8px 8px 0 0; text-align: center; position: relative; }
+        .school-name { font-size: 16px; font-weight: 300; margin-bottom: 10px; letter-spacing: 1px; color: #F5E6D3; }
+        .btn { background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); color: white; padding: 14px 40px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .question-block { margin-bottom: 30px; padding: 20px; border: 1px solid #e0d5c5; border-radius: 6px; background-color: #fafaf8; }
+        body.dark-mode .question-block { background-color: #383838; border-color: #555; }
+        .portfolio-input { width: 100%; padding: 12px; border: 2px solid #2180B0; border-radius: 4px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="test-container">
+    <div class="test-header">
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        <div class="school-name">DCA | DISCOVERY ASSESSMENT [cite: 313]</div>
+        <h1>Piano 100 | Final Exam</h1>
+        <p>Foundations of Technique & Music Theory</p>
+    </div>
+
+    <div class="student-id-section" id="loginView" style="padding: 40px 30px; text-align: center;">
+        <h2>Enter Student ID</h2>
+        <input type="text" class="student-id-input" id="studentIdInput" maxlength="6" style="width: 100%; max-width: 300px; padding: 15px; font-size: 18px; text-align: center; border: 3px solid #5DADE2; border-radius: 6px; margin-bottom: 15px;">
+        <br>
+        <button class="btn" onclick="handleStart()">Start Test [cite: 315]</button>
+    </div>
+
+    <form id="testForm" style="display:none; padding:30px;">
+        <div id="questionView"></div>
+        
+        <div class="question-block" style="border: 2px solid #2180B0; background-color: #eef7fc;">
+            <div style="font-weight: bold; color: #2180B0;">SECTION 5: PERFORMANCE PORTFOLIO</div>
+            <p>Upload your final performance videos (Scale proficiency and 2 prepared pieces) to a Google Folder. Paste the link below.</p>
+            <input type="url" id="portfolioLink" name="portfolioLink" class="portfolio-input" placeholder="https://drive.google.com/..." required>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="btn" id="submitBtn">Submit Final Exam</button>
+        </div>
+    </form>
+
+    <div class="results-section" id="resultView" style="display:none; padding: 30px;">
+        <h2 style="color: #2180B0;">Submission Complete [cite: 320]</h2>
+        <div class="report-display-box" id="studentReportContent"></div>
+    </div>
+</div>
+
+<script>
+    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxAhRLti_ub4c0EVgQq272gYxX1HJxVJvjyIMnvtjvWlqxLThEbkAzEXPpXeAio8qmf/exec'; [cite: 321]
+    const validStudentIDs = ["567241", "739431", "996371"]; [cite: 333]
+    
+    const questions = [
+        {q: "How many semi-tones are in a perfect fifth?", opts: ["5", "6", "7", "8"], ans: "C"},
+        {q: "Which finger is typically designated as '1' in standard piano fingering?", opts: ["Pinky", "Index", "Thumb", "Middle"], ans: "C"},
+        {q: "What does the musical term 'Crescendo' indicate?", opts: ["To play softly", "To gradually get louder", "To play at a brisk tempo", "To hold a note indefinitely"], ans: "B"},
+        {q: "A Major scale follows which pattern of whole (W) and half (H) steps?", opts: ["W-W-H-W-W-W-H", "W-H-W-W-H-W-W", "W-W-W-H-W-W-H", "H-W-W-H-W-W-W"], ans: "A"},
+        {q: "Which pedal is used to sustain notes after the keys are released?", opts: ["Soft Pedal", "Sostenuto Pedal", "Damper Pedal", "Muffler Pedal"], ans: "C"}
+        // Add additional 25 questions following this structure
+    ];
+
+    let sID = '';
+
+    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); } [cite: 342]
+
+    function handleStart() {
+        const val = document.getElementById('studentIdInput').value.trim();
+        if (!validStudentIDs.includes(val)) { alert("Invalid ID"); return; } [cite: 349, 350]
+        sID = val;
+        document.getElementById('loginView').style.display = 'none';
+        document.getElementById('testForm').style.display = 'block';
+        renderQuestions();
+    }
+
+    function renderQuestions() {
+        const container = document.getElementById('questionView');
+        questions.forEach((item, i) => {
+            const div = document.createElement('div');
+            div.className = 'question-block';
+            div.innerHTML = `<strong>Q${i+1}:</strong> ${item.q}<br>` + 
+                item.opts.map((opt, j) => `<input type="radio" name="q${i+1}" value="${String.fromCharCode(65+j)}"> ${opt}<br>`).join('');
+            container.appendChild(div);
+        });
+    }
+
+    document.getElementById('testForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const portfolio = document.getElementById('portfolioLink').value;
+        let score = 0;
+        questions.forEach((item, i) => {
+            const checked = document.querySelector(`input[name="q${i+1}"]:checked`);
+            if (checked && checked.value === item.ans) score++; [cite: 374]
+        });
+
+        const data = { studentId: sID, score: score, portfolioUrl: portfolio };
+        
+        try {
+            await fetch(GOOGLE_SHEETS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
+        } catch (err) { console.error("Sync Error", err); }
+
+        document.getElementById('testForm').style.display = 'none';
+        document.getElementById('resultView').style.display = 'block';
+        document.getElementById('studentReportContent').innerText = `ID: ${sID}\nScore: ${score}/30\nPortfolio Link Recorded.`;
+    };
+</script>
+</body>
+</html>
