@@ -2,73 +2,159 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Piano 100 Study Guide | DCA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano 100 | Study Guide - Doves Christian Academy</title>
     <style>
-        /* Styles preserved from Biology Study Guide [cite: 383-444] */
-        body { font-family: 'Segoe UI', sans-serif; background-color: #f5f5f0; padding: 20px; }
-        .guide-container { max-width: 900px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .guide-header { background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
-        .section-title { color: #2180B0; border-bottom: 3px solid #D4AF37; margin: 20px 0; font-size: 22px; }
-        .concept-card { background: #fafaf8; border: 1px solid #e0d5c5; padding: 15px; border-radius: 6px; margin-bottom: 10px; }
-        .study-tip { background-color: #d4edda; border-left: 4px solid #28a745; padding: 12px; margin: 15px 0; } [cite: 424, 425]
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f5f0; padding: 20px; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
+        body.dark-mode { background-color: #1a1a1a; color: #e0e0e0; }
+        .guide-container { max-width: 900px; margin: 0 auto; background-color: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow: hidden; }
+        .guide-header { background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); color: white; padding: 40px 30px; text-align: center; position: relative; }
+        .section-title { color: #2180B0; font-size: 22px; font-weight: 600; margin-bottom: 15px; border-bottom: 3px solid #D4AF37; padding-bottom: 8px; margin-top: 25px; }
+        .concept-card { background-color: #fafaf8; border: 1px solid #e0d5c5; border-radius: 6px; padding: 15px; margin-bottom: 15px; }
+        body.dark-mode .concept-card { background-color: #2d2d2d; border-color: #444; }
+        .study-tip { background-color: #d4edda; border-left: 4px solid #28a745; padding: 12px; margin: 15px 0; border-radius: 4px; color: #155724; }
+        body.dark-mode .study-tip { background-color: #1a3a1a; color: #d4edda; }
+        .dark-mode-toggle { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); border: none; color: white; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 12px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; background: white; }
+        body.dark-mode table { background: #2d2d2d; color: #e0e0e0; }
+        th { background: #2180B0; color: white; padding: 12px; text-align: left; }
+        td { border: 1px solid #e0d5c5; padding: 12px; }
     </style>
 </head>
 <body>
 
 <div class="guide-container">
     <div class="guide-header">
-        <div class="school-name">DCA | DISCOVERY ASSESSMENT [cite: 445]</div>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        <div style="font-size: 14px; letter-spacing: 2px; color: #F5E6D3; margin-bottom: 10px;">DCA | ACADEMIC PREPARATION</div>
         <h1>Piano 100 Study Guide</h1>
-        <p>Foundations of Technique, Theory, and Performance</p>
+        <p>Advanced Theory, Harmonic Analysis & Technical Proficiency</p>
     </div>
 
-    <div style="padding: 30px;">
-        <div class="intro-box" style="background: #FFF9F0; padding: 20px; border-left: 4px solid #D4AF37;">
-            <strong>🎹 Strategy for Success:</strong><br>
-            This guide covers the 30-question assessment and provides the checklist for your Performance Portfolio submission[cite: 446, 447].
+    <div class="guide-body" style="padding: 30px;">
+        <div class="intro-box" style="background: #FFF9F0; padding: 20px; border-left: 4px solid #D4AF37; margin-bottom: 30px; color: #3E2723;">
+            <strong>🎹 Exam Strategy:</strong><br>
+            This guide has been updated to reflect the <strong>New Assessment Topics</strong>. Focus heavily on Section 2 (Inversions) and Section 3 (Roman Numerals), as these carry the highest point value on the written exam.
         </div>
 
-        <div class="section-title">1. Technical Fundamentals</div>
-        <div class="concept-card">
-            <span class="concept-term">Major Scale Pattern:</span> W-W-H-W-W-W-H (Whole and Half steps).
-        </div>
-        <div class="concept-card">
-            <span class="concept-term">Posture:</span> Ensure bench height allows elbows to be slightly above the keys with feet flat on the floor.
+        <div class="section">
+            <div class="section-title">1. Advanced Scale & Technical Mastery</div>
+            <div class="concept-card">
+                <strong>The Three Minor Forms:</strong>
+                <ul>
+                    <li><em>Natural:</em> Follows the key signature exactly.</li>
+                    <li><em>Harmonic:</em> Raised 7th degree (ascending and descending).</li>
+                    <li><em>Melodic:</em> Raised 6th and 7th ascending; lowered back to natural descending.</li>
+                </ul>
+            </div>
+            <div class="concept-card">
+                <strong>Fingering Standards:</strong> Remember that for B Major, the LH tonic (B) starts on <strong>Finger 4</strong> to accommodate the black-key clusters efficiently.
+            </div>
+            <div class="study-tip">
+                <strong>Portfolio Update:</strong> Your scale submissions must now demonstrate <strong>4 full octaves</strong> with consistent tempo (parallel motion).
+            </div>
         </div>
 
-        <div class="section-title">2. Music Theory & Notation</div>
-        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-            <tr style="background: #2180B0; color: white;">
-                <th style="padding: 10px; text-align: left;">Term</th>
-                <th style="padding: 10px; text-align: left;">Definition</th>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ccc; padding: 10px;"><strong>Legato</strong></td>
-                <td style="border: 1px solid #ccc; padding: 10px;">To play smooth and connected notes.</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ccc; padding: 10px;"><strong>Staccato</strong></td>
-                <td style="border: 1px solid #ccc; padding: 10px;">Short, detached notes.</td>
-            </tr>
-        </table>
-
-        <div class="section-title">3. Performance Portfolio Requirements</div>
-        <div class="concept-card" style="border-left: 5px solid #2180B0;">
-            <strong>Mandatory Submission:</strong> Your Google Drive folder must include:
-            <ul>
-                <li>Major Scales (C, G, D, A, E) - 2 Octaves, hands together.</li>
-                <li>One Baroque or Classical era piece (Memorized).</li>
-                <li>One Modern or Romantic era piece.</li>
-            </ul>
+        <div class="section">
+            <div class="section-title">2. Interval Inversions & Theory</div>
+            <table h>
+                <tr>
+                    <th>Original Interval</th>
+                    <th>Perfect Inversion</th>
+                    <th>Quality Change</th>
+                </tr>
+                <tr><td>Major 3rd</td><td>Minor 6th</td><td>Major becomes Minor</td></tr>
+                <tr><td>Perfect 5th</td><td>Perfect 4th</td><td>Perfect stays Perfect</td></tr>
+                <tr><td>Minor 2nd</td><td>Major 7th</td><td>Minor becomes Major</td></tr>
+                <tr><td>Augmented 4th</td><td>Diminished 5th</td><td>Aug. becomes Dim.</td></tr>
+            </table>
         </div>
-        <div class="study-tip">
-            <strong>Permissions Check:</strong> Set your Google Drive folder to "Anyone with the link can view" to avoid a zero on the performance portion! [cite: 424, 427]
+
+        <div class="section">
+            <div class="section-title">3. Roman Numeral Analysis</div>
+            <div class="concept-card">
+                <strong>Diatonic Chord Qualities (Major Keys):</strong>
+                <p>I (Major), ii (minor), iii (minor), IV (Major), V (Major), vi (minor), vii° (diminished).</p>
+            </div>
+            <div class="concept-card">
+                <strong>Secondary Leading Tones:</strong> Look for accidentals that temporarily resolve to a chord other than the tonic (e.g., V/V).
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">4. Piano Mechanics & Pedaling</div>
+            <div class="concept-card">
+                <strong>Una Corda (Soft Pedal):</strong> On a grand piano, this shifts the entire keyboard action to the right so hammers strike only one or two strings instead of three, altering the <em>timbre</em>, not just volume.
+            </div>
+            <div class="concept-card">
+                <strong>Sostenuto (Middle Pedal):</strong> Sustains only the notes that were held down at the precise moment the pedal was depressed.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">5. Final Performance Checklist</div>
+            <div class="concept-card" style="border-left: 5px solid #2180B0;">
+                <strong>Required Portfolio Elements:</strong><br>
+                • 4-Octave Major & Harmonic Minor Scales (Hands Together).<br>
+                • Major & Minor Arpeggios (4 Octaves).<br>
+                • Technical Etude (e.g., Czerny or Hanon).<br>
+                • Two contrasting repertoire pieces from different eras.
+            </div>
+            <div class="study-tip">
+                <strong>Review Window:</strong> Use the 🚩 "Flag for Review" feature during the digital test to revisit complex harmonic analysis questions before your final submission.
+            </div>
+        </div>
+    </div>
+
+        <button class="accordion">🧠 Final Review Challenge</button>
+        <div class="panel">
+            <div style="padding: 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 15px 0; color: #333;">
+                <p><strong>Scenario A:</strong> You are playing a scale that raises the 6th and 7th degrees only when moving upward, but plays according to the key signature when moving downward. Which scale form is this?</p>
+                <details style="cursor: pointer; margin-top: 10px;">
+                    <summary>Show Answer</summary>
+                    Melodic Minor scale.
+                </details>
+            </div>
+
+            <div style="padding: 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 15px 0; color: #333;">
+                <p><strong>Scenario B:</strong> You identify a <strong>Major 6th</strong> interval in a score. If you were to invert this interval, what would the new interval and quality be?</p>
+                <details style="cursor: pointer; margin-top: 10px;">
+                    <summary>Show Answer</summary>
+                    Minor 3rd (The number 9 rule: 9 - 6 = 3; Quality flips from Major to Minor).
+                </details>
+            </div>
+
+            <div style="padding: 15px; background-color: #fff3cd; border-left: 4px solid #ffc107; margin: 15px 0; color: #333;">
+                <p><strong>Scenario C:</strong> In a piece written in C Major, you encounter a <strong>D minor chord</strong>. How would you label this using Roman Numeral Analysis?</p>
+                <details style="cursor: pointer; margin-top: 10px;">
+                    <summary>Show Answer</summary>
+                    <strong>ii</strong> (Lower case indicates a minor triad on the second scale degree).
+                </details>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); } [cite: 483]
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        document.querySelector('.dark-mode-toggle').textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+    }
 </script>
 </body>
 </html>
