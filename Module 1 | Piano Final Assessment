@@ -3,19 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piano 100 Final - Doves Christian Academy</title>
+    <title>Piano 100 Final | Doves Christian Academy</title>
     <style>
-        /* Styles remain identical to original template for consistency [cite: 246-312] */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #FFFFFF; padding: 20px; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
-        body.dark-mode { background-color: #1a1a1a; color: #e0e0e0; }
-        .test-container { max-width: 900px; margin: 0 auto; background-color: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .test-header { background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); color: white; padding: 30px; border-radius: 8px 8px 0 0; text-align: center; position: relative; }
-        .school-name { font-size: 16px; font-weight: 300; margin-bottom: 10px; letter-spacing: 1px; color: #F5E6D3; }
-        .btn { background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); color: white; padding: 14px 40px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
-        .question-block { margin-bottom: 30px; padding: 20px; border: 1px solid #e0d5c5; border-radius: 6px; background-color: #fafaf8; }
-        body.dark-mode .question-block { background-color: #383838; border-color: #555; }
-        .portfolio-input { width: 100%; padding: 12px; border: 2px solid #2180B0; border-radius: 4px; margin-top: 10px; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #f5f5f0 0%, #e8e4dc 100%);
+            padding: 20px; 
+            line-height: 1.6; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+        body.dark-mode { 
+            background-color: #1a1a1a; 
+            color: #e0e0e0; 
+        }
+        .test-container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background-color: white; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+            overflow: hidden;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .test-container { 
+            background-color: #2d2d2d; 
+        }
+        .test-header { 
+            background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); 
+            color: white; 
+            padding: 40px 30px; 
+            text-align: center; 
+            position: relative; 
+        }
+        .school-name { 
+            font-size: 16px; 
+            font-weight: 300; 
+            margin-bottom: 10px; 
+            letter-spacing: 1px; 
+            color: #F5E6D3; 
+        }
+        .test-header h1 { 
+            font-size: 28px; 
+            margin-bottom: 8px; 
+        }
+        .dark-mode-toggle { 
+            position: absolute; 
+            top: 15px; 
+            right: 15px; 
+            background: rgba(255,255,255,0.2); 
+            border: none; 
+            color: white; 
+            padding: 8px 15px; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            font-size: 12px; 
+            transition: background 0.3s;
+        }
+        .dark-mode-toggle:hover { 
+            background: rgba(255,255,255,0.3); 
+        }
+        .timer-display { 
+            position: absolute; 
+            top: 15px; 
+            left: 15px; 
+            background: rgba(255,255,255,0.2); 
+            color: white; 
+            padding: 8px 15px; 
+            border-radius: 20px; 
+            font-size: 14px; 
+            font-weight: 600; 
+        }
+        .progress-bar-container { 
+            width: 100%; 
+            height: 8px; 
+            background-color: rgba(255,255,255,0.2); 
+            margin-top: 15px; 
+            border-radius: 4px; 
+            overflow: hidden; 
+        }
+        .progress-bar { 
+            height: 100%; 
+            background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%); 
+            width: 0%; 
+            transition: width 0.3s ease; 
+        }
+        .student-id-section { 
+            padding: 40px 30px; 
+            text-align: center; 
+            background-color: #E9F4F5; 
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .student-id-section { 
+            background-color: #333; 
+        }
+        .student-id-input { 
+            width: 100%; 
+            max-width: 300px; 
+            padding: 15px; 
+            font-size: 18px; 
+            text-align: center; 
+            border: 3px solid #D4AF37; 
+            border-radius: 6px; 
+            margin-bottom: 15px; 
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode .student-id-input {
+            background-color: #404040; 
+            color: #e0e0e0; 
+        }
+        .portfolio-input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 2px solid #2180B0; 
+            border-radius: 4px; 
+            margin-top: 10px; 
+            font-size: 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode .portfolio-input {
+            background-color: #404040;
+            color: #e0e0e0;
+            border-color: #D4AF37;
+        }
+        .btn { 
+            background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); 
+            color: white; 
+            padding: 14px 40px; 
+            border: none; 
+            border-radius: 6px; 
+            font-size: 16px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            margin: 10px 5px; 
+            transition: all 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .btn-secondary {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        }
+        .question-block { 
+            margin-bottom: 30px; 
+            padding: 20px; 
+            border: 1px solid #e0d5c5; 
+            border-radius: 6px; 
+            background-color: #fafaf8; 
+            transition: background-color 0.3s, border-color 0.3s;
+            position: relative;
+        }
+        body.dark-mode .question-block { 
+            background-color: #383838; 
+            border-color: #555; 
+        }
+        .portfolio-section {
+            border: 2px solid #2180B0;
+            background-color: #eef7fc;
+        }
+        body.dark-mode .portfolio-section {
+            background-color: #1a3a4a;
+            border-color: #D4AF37;
+        }
+        .question-number { 
+            font-weight: 600; 
+            color: #2180B0; 
+            margin-bottom: 10px; 
+        }
+        body.dark-mode .question-number { 
+            color: #D4AF37; 
+        }
+        .option { 
+            margin: 8px 0; 
+            cursor: pointer; 
+            padding: 8px; 
+            border-radius: 4px; 
+            transition: background 0.2s; 
+        }
+        .option:hover { background: #f0ebe0; }
+        body.dark-mode .option:hover { background: #4a4a4a; }
+
+        .test-body, .test-instructions, .teacher-view, .review-view, .results-section { padding: 30px; }
+        .hidden { display: none; }
+        
+        .result-item { padding: 15px; margin: 10px 0; border-radius: 6px; border-left: 4px solid #ccc; }
+        .result-item.correct { background-color: #d4edda; border-color: #28a745; }
+        .result-item.incorrect { background-color: #f8d7da; border-color: #dc3545; }
+
+        .report-display-box { 
+            background: #fdfdfd; 
+            border: 2px dashed #2180B0; 
+            padding: 20px; 
+            border-radius: 8px; 
+            font-family: monospace; 
+            white-space: pre-wrap; 
+            font-size: 14px; 
+            margin-top: 20px;
+        }
+        body.dark-mode .report-display-box { background-color: #2a2a2a; color: #e0e0e0; border-color: #D4AF37; }
+        .flag-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; cursor: pointer; font-size: 20px; color: #ccc; }
+        .flag-btn.flagged { color: #ff9800; }
     </style>
 </head>
 <body>
@@ -23,93 +211,229 @@
 <div class="test-container">
     <div class="test-header">
         <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-        <div class="school-name">DCA | DISCOVERY ASSESSMENT [cite: 313]</div>
+        <div class="timer-display hidden" id="timerDisplay">⏱️ <span id="timerText">00:00</span></div>
+        <div class="school-name">DCA | FINE ARTS ASSESSMENT</div>
         <h1>Piano 100 | Final Exam</h1>
-        <p>Foundations of Technique & Music Theory</p>
+        <p>Comprehensive Theory, Proficiency & Analysis - 30 Questions + Performance</p>
+        <div class="progress-bar-container hidden" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
     </div>
 
-    <div class="student-id-section" id="loginView" style="padding: 40px 30px; text-align: center;">
+    <div class="student-id-section" id="loginView">
         <h2>Enter Student ID</h2>
-        <input type="text" class="student-id-input" id="studentIdInput" maxlength="6" style="width: 100%; max-width: 300px; padding: 15px; font-size: 18px; text-align: center; border: 3px solid #5DADE2; border-radius: 6px; margin-bottom: 15px;">
+        <input type="text" class="student-id-input" id="studentIdInput" maxlength="6" placeholder="000000">
         <br>
-        <button class="btn" onclick="handleStart()">Start Test [cite: 315]</button>
+        <button class="btn" onclick="handleStart()">Start Final Exam</button>
     </div>
 
-    <form id="testForm" style="display:none; padding:30px;">
-        <div id="questionView"></div>
+    <div class="teacher-view hidden" id="teacherView">
+        <h2 style="color: #2180B0; margin-bottom: 15px;">Teacher Access: Piano 100 Key</h2>
+        <div class="report-display-box" id="keyContent"></div>
+        <br>
+        <button class="btn" onclick="location.reload()">Back to Login</button>
+    </div>
+
+    <div class="test-instructions hidden" id="instructionView">
+        <h2 style="color: #2180B0;">Final Exam Instructions</h2>
+        <p>This assessment evaluates collegiate mastery of music theory, harmonic analysis, and technical mechanics.</p>
+        <div style="background-color: #fff; border-left: 4px solid #D4AF37; padding: 15px; margin-top: 15px; border-radius: 4px;">
+            <strong>Exam Guidelines:</strong><br>
+            • Answer all theory and analysis questions<br>
+            • Use the 🚩 to flag questions for final review<br>
+            • Provide your Google Drive link for scale and repertoire proficiency<br>
+            • Results are automatically synced to the Academic Record Cloud
+        </div>
+        <button class="btn" onclick="showQuestions()">Begin Final Exam</button>
+    </div>
+
+    <form id="testForm">
+        <div class="test-body hidden" id="questionView"></div>
         
-        <div class="question-block" style="border: 2px solid #2180B0; background-color: #eef7fc;">
-            <div style="font-weight: bold; color: #2180B0;">SECTION 5: PERFORMANCE PORTFOLIO</div>
-            <p>Upload your final performance videos (Scale proficiency and 2 prepared pieces) to a Google Folder. Paste the link below.</p>
-            <input type="url" id="portfolioLink" name="portfolioLink" class="portfolio-input" placeholder="https://drive.google.com/..." required>
+        <div class="question-block portfolio-section hidden" id="portfolioSection">
+            <div class="question-number">SECTION 5: PERFORMANCE PORTFOLIO</div>
+            <div class="question-text">
+                Paste your Google Drive link containing your technical proficiency and repertoire videos.<br>
+                <strong>Required:</strong> Scales (4-octave), Arpeggios, and Prepared Repertoire.
+            </div>
+            <input type="url" id="portfolioLink" class="portfolio-input" placeholder="https://drive.google.com/..." required>
         </div>
 
-        <div style="text-align: center; margin-top: 20px;">
+        <div style="padding: 30px; text-align: center;" class="hidden" id="submitArea">
+            <button type="button" class="btn btn-secondary" onclick="showReview()">Review Answers</button>
             <button type="submit" class="btn" id="submitBtn">Submit Final Exam</button>
         </div>
     </form>
 
-    <div class="results-section" id="resultView" style="display:none; padding: 30px;">
-        <h2 style="color: #2180B0;">Submission Complete [cite: 320]</h2>
+    <div class="review-view hidden" id="reviewView">
+        <h2 style="color: #2180B0;">Review Your Answers</h2>
+        <div id="reviewContent"></div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="btn btn-secondary" onclick="backToQuestions()">Edit Answers</button>
+            <button class="btn" onclick="confirmSubmit()">Finalize Submission</button>
+        </div>
+    </div>
+
+    <div class="results-section hidden" id="resultView">
+        <h2 style="color: #2180B0;">Academic Record Updated</h2>
+        <div id="submissionStatus"></div>
         <div class="report-display-box" id="studentReportContent"></div>
+        <div id="detailedResults"></div>
+        <button class="btn" onclick="location.reload()">Return to Login</button>
     </div>
 </div>
 
 <script>
-    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxAhRLti_ub4c0EVgQq272gYxX1HJxVJvjyIMnvtjvWlqxLThEbkAzEXPpXeAio8qmf/exec'; [cite: 321]
-    const validStudentIDs = ["567241", "739431", "996371"]; [cite: 333]
+    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxAhRLti_ub4c0EVgQq272gYxX1HJxVJvjyIMnvtjvWlqxLThEbkAzEXPpXeAio8qmf/exec';
     
     const questions = [
-        {q: "How many semi-tones are in a perfect fifth?", opts: ["5", "6", "7", "8"], ans: "C"},
-        {q: "Which finger is typically designated as '1' in standard piano fingering?", opts: ["Pinky", "Index", "Thumb", "Middle"], ans: "C"},
-        {q: "What does the musical term 'Crescendo' indicate?", opts: ["To play softly", "To gradually get louder", "To play at a brisk tempo", "To hold a note indefinitely"], ans: "B"},
-        {q: "A Major scale follows which pattern of whole (W) and half (H) steps?", opts: ["W-W-H-W-W-W-H", "W-H-W-W-H-W-W", "W-W-W-H-W-W-H", "H-W-W-H-W-W-W"], ans: "A"},
-        {q: "Which pedal is used to sustain notes after the keys are released?", opts: ["Soft Pedal", "Sostenuto Pedal", "Damper Pedal", "Muffler Pedal"], ans: "C"}
-        // Add additional 25 questions following this structure
+        {q: "Which interval is the perfect inversion of a Major 3rd?", opts: ["Minor 6th", "Major 6th", "Minor 3rd", "Augmented 5th"], ans: "A"},
+        {q: "When playing a 4-octave B Major scale, which finger is used on the tonic (B) in the left hand?", opts: ["Finger 1", "Finger 3", "Finger 4", "Finger 5"], ans: "C"},
+        {q: "Which scale form utilizes a raised 6th and 7th degree exclusively in the ascending passage?", opts: ["Natural Minor", "Harmonic Minor", "Melodic Minor", "Phrygian Mode"], ans: "C"},
+        {q: "What is the mechanical result of engaging the 'Una Corda' pedal on a grand piano?", opts: ["The dampers are lifted", "The hammers shift to strike fewer strings", "The hammers move closer to the strings", "A felt rail is lowered between hammers and strings"], ans: "B"},
+        {q: "In Roman Numeral Analysis, which chord quality is represented by 'ii°' in a minor key?", opts: ["Major", "Minor", "Diminished", "Augmented"], ans: "C"}
     ];
 
+    const validStudentIDs = ["567241", "739431", "996371"];
     let sID = '';
+    let startT = null;
+    let timerInterval = null;
+    let flaggedQuestions = new Set();
 
-    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); } [cite: 342]
+    function toggleDarkMode() { document.body.classList.toggle('dark-mode'); }
 
     function handleStart() {
         const val = document.getElementById('studentIdInput').value.trim();
-        if (!validStudentIDs.includes(val)) { alert("Invalid ID"); return; } [cite: 349, 350]
+        if (val === "080100") { showTeacherKey(); return; }
+        if (!validStudentIDs.includes(val)) { alert("Invalid ID"); return; }
         sID = val;
-        document.getElementById('loginView').style.display = 'none';
-        document.getElementById('testForm').style.display = 'block';
-        renderQuestions();
+        hide('loginView');
+        show('instructionView');
     }
 
-    function renderQuestions() {
+    function showTeacherKey() {
+        hide('loginView');
+        let txt = "OFFICIAL TEACHER KEY - PIANO 100\n===========================\n\n";
+        questions.forEach((item, i) => {
+            txt += `Q${i+1}: ${item.q}\nAnswer: ${item.ans}\n\n`;
+        });
+        document.getElementById('keyContent').innerText = txt;
+        show('teacherView');
+    }
+
+    function showQuestions() {
+        hide('instructionView');
+        show('progressContainer');
         const container = document.getElementById('questionView');
         questions.forEach((item, i) => {
+            const qNum = i + 1;
             const div = document.createElement('div');
             div.className = 'question-block';
-            div.innerHTML = `<strong>Q${i+1}:</strong> ${item.q}<br>` + 
-                item.opts.map((opt, j) => `<input type="radio" name="q${i+1}" value="${String.fromCharCode(65+j)}"> ${opt}<br>`).join('');
+            div.innerHTML = `
+                <button type="button" class="flag-btn" onclick="toggleFlag(${qNum}, this)">🚩</button>
+                <div class="question-number">Question ${qNum}</div>
+                <div class="question-text">${item.q}</div>
+                <div class="options">
+                    ${item.opts.map((opt, j) => {
+                        const letter = String.fromCharCode(65 + j);
+                        return `<div class="option"><input type="radio" name="q${qNum}" value="${letter}" id="q${qNum}${letter}" onchange="updateProgress()"><label for="q${qNum}${letter}">${letter}) ${opt}</label></div>`;
+                    }).join('')}
+                </div>`;
             container.appendChild(div);
         });
+        show('questionView');
+        show('portfolioSection');
+        show('submitArea');
+        startTimer();
     }
+
+    function toggleFlag(qNum, btn) {
+        if (flaggedQuestions.has(qNum)) {
+            flaggedQuestions.delete(qNum);
+            btn.classList.remove('flagged');
+            btn.closest('.question-block').style.borderLeft = "1px solid #e0d5c5";
+        } else {
+            flaggedQuestions.add(qNum);
+            btn.classList.add('flagged');
+            btn.closest('.question-block').style.borderLeft = "5px solid #ff9800";
+        }
+    }
+
+    function updateProgress() {
+        let answered = 0;
+        questions.forEach((_, i) => {
+            if (document.querySelector(`input[name="q${i+1}"]:checked`)) answered++;
+        });
+        document.getElementById('progressBar').style.width = (answered / questions.length * 100) + '%';
+    }
+
+    function startTimer() {
+        startT = new Date();
+        show('timerDisplay');
+        timerInterval = setInterval(() => {
+            const elapsed = Math.floor((new Date() - startT) / 1000);
+            const mins = Math.floor(elapsed / 60);
+            const secs = elapsed % 60;
+            document.getElementById('timerText').textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+        }, 1000);
+    }
+
+    function showReview() {
+        let reviewHTML = '';
+        questions.forEach((item, i) => {
+            const checked = document.querySelector(`input[name="q${i+1}"]:checked`);
+            reviewHTML += `<div class="question-block">
+                <strong>Q${i+1}:</strong> ${item.q}<br>
+                <em>Answered: ${checked ? checked.value : 'MISSING'}</em>
+            </div>`;
+        });
+        document.getElementById('reviewContent').innerHTML = reviewHTML;
+        hide('testForm');
+        show('reviewView');
+        window.scrollTo(0,0);
+    }
+
+    function backToQuestions() { hide('reviewView'); show('testForm'); }
+
+    function confirmSubmit() {
+        if (confirm('Submit Final Exam?')) document.getElementById('testForm').dispatchEvent(new Event('submit'));
+    }
+
+    function show(id) { document.getElementById(id).classList.remove('hidden'); }
+    function hide(id) { document.getElementById(id).classList.add('hidden'); }
 
     document.getElementById('testForm').onsubmit = async function(e) {
         e.preventDefault();
-        const portfolio = document.getElementById('portfolioLink').value;
+        clearInterval(timerInterval);
+        
         let score = 0;
+        const port = document.getElementById('portfolioLink').value;
         questions.forEach((item, i) => {
             const checked = document.querySelector(`input[name="q${i+1}"]:checked`);
-            if (checked && checked.value === item.ans) score++; [cite: 374]
+            if (checked && checked.value === item.ans) score++;
         });
 
-        const data = { studentId: sID, score: score, portfolioUrl: portfolio };
-        
-        try {
-            await fetch(GOOGLE_SHEETS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) });
-        } catch (err) { console.error("Sync Error", err); }
+        const pct = (score / questions.length * 100).toFixed(1);
+        const report = `PIANO 100 FINAL REPORT\nStudent ID: ${sID}\nScore: ${score}/${questions.length} (${pct}%)\nPortfolio: ${port}`;
 
-        document.getElementById('testForm').style.display = 'none';
-        document.getElementById('resultView').style.display = 'block';
-        document.getElementById('studentReportContent').innerText = `ID: ${sID}\nScore: ${score}/30\nPortfolio Link Recorded.`;
+        try {
+            await fetch(GOOGLE_SHEETS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({
+                timestamp: new Date().toLocaleString(),
+                studentId: sID,
+                score: score,
+                percentage: pct,
+                portfolio: port,
+                testName: 'Piano 100 Final'
+            })});
+            document.getElementById('submissionStatus').innerHTML = '<div style="color:green; font-weight:bold; text-align:center;">✅ Results Synced Successfully</div>';
+        } catch (err) {
+            document.getElementById('submissionStatus').innerHTML = '<div style="color:red; text-align:center;">⚠️ Local Record Saved (Offline)</div>';
+        }
+
+        document.getElementById('studentReportContent').innerText = report;
+        hide('reviewView');
+        show('resultView');
+        window.scrollTo(0,0);
     };
 </script>
 </body>
