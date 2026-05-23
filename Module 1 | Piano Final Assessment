@@ -9,7 +9,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #f5f5f0 0%, #e8e4dc 100%);
+            background: linear-gradient(135deg, #FAF8F5 0%, #F0ECE6 100%);
             padding: 20px; 
             line-height: 1.6; 
             transition: background-color 0.3s, color 0.3s; 
@@ -22,32 +22,35 @@
         }
         body.dark-mode .test-container { background-color: #2d2d2d; }
         .test-header { 
-            background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); 
+            background: linear-gradient(90deg, #F2D8C7 0%, #C58D69 45%, #3A241D 100%); 
             color: white; padding: 40px 30px; text-align: center; position: relative; 
         }
-        .school-name { font-size: 14px; letter-spacing: 2px; color: #F5E6D3; margin-bottom: 10px; }
-        .dark-mode-toggle { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); border: none; color: white; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 12px; }
+        .school-name { font-size: 14px; letter-spacing: 2px; color: #FCFBF9; margin-bottom: 10px; }
+        .dark-mode-toggle { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); border: none; color: white; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 14px; }
         .timer-display { position: absolute; top: 15px; left: 15px; background: rgba(255,255,255,0.2); color: white; padding: 8px 15px; border-radius: 20px; font-size: 14px; font-weight: 600; }
         .progress-bar-container { width: 100%; height: 8px; background-color: rgba(255,255,255,0.2); margin-top: 15px; border-radius: 4px; overflow: hidden; }
-        .progress-bar { height: 100%; background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%); width: 0%; transition: width 0.3s ease; }
-        .student-id-section { padding: 40px 30px; text-align: center; background-color: #E9F4F5; transition: background-color 0.3s; }
+        .progress-bar { height: 100%; background: linear-gradient(90deg, #C58D69 0%, #9D6E52 100%); width: 0%; transition: width 0.3s ease; }
+        .student-id-section { padding: 40px 30px; text-align: center; background-color: #FCFBF9; transition: background-color 0.3s; }
         body.dark-mode .student-id-section { background-color: #333; }
-        .student-id-input { width: 100%; max-width: 300px; padding: 15px; font-size: 18px; text-align: center; border: 3px solid #D4AF37; border-radius: 6px; margin-bottom: 15px; transition: background-color 0.3s, color 0.3s; }
+        .student-id-input { width: 100%; max-width: 300px; padding: 15px; font-size: 18px; text-align: center; border: 3px solid #C8A05D; border-radius: 6px; margin-bottom: 15px; transition: background-color 0.3s; }
+        .student-id-input:focus { outline: none; border-color: #9D6E52; box-shadow: 0 0 5px rgba(197, 141, 105, 0.3); }
         body.dark-mode .student-id-input { background-color: #404040; color: #e0e0e0; }
-        .btn { background: linear-gradient(135deg, #2180B0 0%, #3E2723 100%); color: white; padding: 14px 40px; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; margin: 10px 5px; transition: all 0.2s; }
+        .btn { background: linear-gradient(90deg, #E1C1AA 0%, #9D6E52 55%, #3A241D 100%); color: white; padding: 14px 40px; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; margin: 10px 5px; }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        .question-block { margin-bottom: 30px; padding: 25px; border: 1px solid #e0d5c5; border-radius: 6px; background-color: #fafaf8; transition: background-color 0.3s; position: relative; }
+        .question-block { margin-bottom: 30px; padding: 25px; border: 1px solid #E1C1AA; border-radius: 6px; background-color: #fafaf8; transition: background-color 0.3s; position: relative; }
         body.dark-mode .question-block { background-color: #383838; border-color: #555; }
-        .question-number { font-weight: 700; color: #2180B0; margin-bottom: 10px; border-bottom: 1px solid #D4AF37; display: inline-block; padding-bottom: 2px; }
-        body.dark-mode .question-number { color: #D4AF37; }
+        .question-number { font-weight: 700; color: #5A372B; margin-bottom: 10px; border-bottom: 1px solid #C8A05D; display: inline-block; padding-bottom: 2px; }
+        body.dark-mode .question-number { color: #C8A05D; }
         .option { margin: 12px 0; cursor: pointer; padding: 10px; border-radius: 4px; transition: background 0.2s; }
-        .option:hover { background: #f0ebe0; }
+        .option:hover { background: #F0ECE6; }
         body.dark-mode .option:hover { background: #4a4a4a; }
-        .report-display-box { background: #fdfdfd; border: 2px dashed #2180B0; padding: 20px; border-radius: 8px; font-family: monospace; white-space: pre-wrap; font-size: 14px; margin-top: 20px; }
-        body.dark-mode .report-display-box { background-color: #2a2a2a; color: #e0e0e0; border-color: #D4AF37; }
+        .report-display-box { background: #FFFFFF; border: 2px dashed #5A372B; padding: 20px; border-radius: 8px; font-family: monospace; white-space: pre-wrap; font-size: 14px; margin-top: 20px; }
+        body.dark-mode .report-display-box { background-color: #2a2a2a; color: #e0e0e0; border-color: #C8A05D; }
         .flag-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; cursor: pointer; font-size: 20px; color: #ccc; }
-        .flag-btn.flagged { color: #ff9800; }
+        .flag-btn.flagged { color: #C58D69; }
         .hidden { display: none; }
+        h2 { color: #5A372B; }
+        body.dark-mode h2 { color: #C8A05D; }
     </style>
 </head>
 <body>
@@ -72,16 +75,16 @@
     </div>
 
     <div class="teacher-view hidden" id="teacherView" style="padding:30px;">
-        <h2 style="color: #2180B0; margin-bottom: 15px;">Official Teacher Access: Piano 101 Answer Key</h2>
+        <h2 style="color: #5A372B; margin-bottom: 15px;">Official Teacher Access: Piano 101 Answer Key</h2>
         <div class="report-display-box" id="keyContent"></div>
         <br>
         <button class="btn" onclick="location.reload()">Back to Login</button>
     </div>
 
     <div class="test-instructions hidden" id="instructionView" style="padding:30px;">
-        <h2 style="color: #2180B0;">Exam Protocols</h2>
+        <h2 style="color: #5A372B;">Exam Protocols</h2>
         <p>This exam consists of 30 theoretical questions followed by your Performance Portfolio submission.</p>
-        <div style="background-color: #fff; border-left: 4px solid #D4AF37; padding: 20px; margin-top: 15px; border-radius: 4px;">
+        <div style="background-color: #fff; border-left: 4px solid #C8A05D; padding: 20px; margin-top: 15px; border-radius: 4px;">
             <strong>Required Sections:</strong><br>
             • Section 1-10: Scalic & Arpeggio Mechanics<br>
             • Section 11-20: Interval Inversions & Theory<br>
@@ -93,29 +96,29 @@
     <form id="testForm">
         <div class="test-body hidden" id="questionView" style="padding:30px;"></div>
         
-        <div class="question-block hidden" id="portfolioSection" style="margin:30px; border: 2px solid #2180B0;">
+        <div class="question-block hidden" id="portfolioSection" style="margin:30px; border: 2px solid #5A372B;">
             <div class="question-number">SECTION 4: PERFORMANCE PORTFOLIO</div>
             <p>Enter your shared Google Drive link for technical and repertoire videos (4-octave scales required).</p>
-            <input type="url" id="portfolioLink" style="width:100%; padding:12px; margin-top:10px; border:1px solid #ccc;" placeholder="https://drive.google.com/..." required>
+            <input type="url" id="portfolioLink" style="width:100%; padding:12px; margin-top:10px; border:1px solid #C8A05D; border-radius: 4px;" placeholder="https://drive.google.com/..." required>
         </div>
 
         <div style="padding: 30px; text-align: center;" class="hidden" id="submitArea">
-            <button type="button" class="btn" style="background:#6c757d" onclick="showReview()">Review All 30 Answers</button>
+            <button type="button" class="btn" style="background:linear-gradient(90deg, #9D9D9D 0%, #6C6C6C 100%)" onclick="showReview()">Review All 30 Answers</button>
             <button type="submit" class="btn" id="submitBtn">Submit Final Results</button>
         </div>
     </form>
 
     <div class="review-view hidden" id="reviewView" style="padding:30px;">
-        <h2 style="color: #2180B0;">Submission Review</h2>
+        <h2 style="color: #5A372B;">Submission Review</h2>
         <div id="reviewContent"></div>
         <div style="text-align: center; margin-top: 20px;">
-            <button class="btn" style="background:#6c757d" onclick="backToQuestions()">Return to Questions</button>
+            <button class="btn" style="background:linear-gradient(90deg, #9D9D9D 0%, #6C6C6C 100%)" onclick="backToQuestions()">Return to Questions</button>
             <button class="btn" onclick="confirmSubmit()">Finalize & Submit</button>
         </div>
     </div>
 
     <div class="results-section hidden" id="resultView" style="padding:30px;">
-        <h2 style="color: #2180B0;">Final Academic Report Generated</h2>
+        <h2 style="color: #5A372B;">Final Academic Report Generated</h2>
         <div id="submissionStatus"></div>
         <div class="report-display-box" id="studentReportContent"></div>
         <button class="btn" onclick="location.reload()">Exit System</button>
@@ -135,7 +138,7 @@
         {q: "Which finger transition is required for 'Thumb-Under' technique in a 4-octave scale?", opts: ["2 under 3", "1 under 3 or 4", "3 over 1", "5 under 4"], ans: "B"},
         {q: "The 'Relative Minor' of E Major is:", opts: ["C# minor", "G# minor", "B minor", "F# minor"], ans: "A"},
         {q: "The Harmonic Minor scale is distinguished by which specific interval adjustment?", opts: ["Raised 6th", "Lowered 2nd", "Raised 7th", "Lowered 7th"], ans: "C"},
-        {q: "What is the primary purpose of parallel motion practice in scales?", opts: ["To increase volume", "To develop hand independence and synchronization", "To learn new key signatures", "To practice pedaling"], ans: "B"},
+        {q: "What is the primary purpose of parallel motion practice in scales?", opts: ["To increase volume", "To develop hand independence and synchronization", "To learn new key signatures", "To practice pedaling techniques"], ans: "B"},
         {q: "In a G Major arpeggio, the right hand's 3rd finger is typically used for which note in root position?", opts: ["G", "B", "D", "None"], ans: "C"},
 
         // INTERVAL INVERSIONS & THEORY
@@ -223,11 +226,11 @@
         if (flaggedQuestions.has(qNum)) {
             flaggedQuestions.delete(qNum);
             btn.classList.remove('flagged');
-            btn.closest('.question-block').style.borderLeft = "1px solid #e0d5c5";
+            btn.closest('.question-block').style.borderLeft = "1px solid #E1C1AA";
         } else {
             flaggedQuestions.add(qNum);
             btn.classList.add('flagged');
-            btn.closest('.question-block').style.borderLeft = "5px solid #ff9800";
+            btn.closest('.question-block').style.borderLeft = "5px solid #C58D69";
         }
     }
 
@@ -254,9 +257,9 @@
         let reviewHTML = '';
         questions.forEach((item, i) => {
             const checked = document.querySelector(`input[name="q${i+1}"]:checked`);
-            const status = checked ? `Selected: ${checked.value}` : '<span style="color:red">UNANSWERED</span>';
+            const status = checked ? `Selected: ${checked.value}` : '<span style="color:#9D6E52">UNANSWERED</span>';
             const flag = flaggedQuestions.has(i+1) ? ' 🚩' : '';
-            reviewHTML += `<div style="padding:10px; border-bottom:1px solid #eee;">
+            reviewHTML += `<div style="padding:10px; border-bottom:1px solid #E1C1AA;">
                 <strong>Q${i+1}:</strong> ${status}${flag}
             </div>`;
         });
@@ -287,7 +290,7 @@
         });
 
         const pct = (score / questions.length * 100).toFixed(1);
-        const report = `PIANO 101 FINAL ACADEMIC REPORT\n------------------------------\nStudent ID: ${sID}\nScore: ${score}/${questions.length} (${pct}%)\nPortfolio Submission: ${port}\nDate: ${new Date().toLocaleString()}`;
+        const report = `PIANO 101 FINAL ACADEMIC REPORT\n------------------------------\nStudent ID: ${sID}\nScore: ${score}/${questions.length} (${pct}%)\nPortfolio Submission: ${port}\nDate: ${new Date().toLocaleString()}\n\nSubmission Confirmed.`;
 
         try {
             await fetch(GOOGLE_SHEETS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify({
@@ -298,9 +301,9 @@
                 portfolio: port,
                 testName: 'Piano 101 Final'
             })});
-            document.getElementById('submissionStatus').innerHTML = '<div style="color:green; font-weight:bold; text-align:center; padding:10px; background:#e8f5e9;">✅ Final Assessment Recorded & Synced</div>';
+            document.getElementById('submissionStatus').innerHTML = '<div style="color:#3A241D; font-weight:bold; text-align:center; padding:10px; background:#E1C1AA; border-radius: 4px;">✅ Final Assessment Recorded & Synced</div>';
         } catch (err) {
-            document.getElementById('submissionStatus').innerHTML = '<div style="color:red; text-align:center; padding:10px; background:#ffebee;">⚠️ Connection issue. Result saved locally.</div>';
+            document.getElementById('submissionStatus').innerHTML = '<div style="color:#9D6E52; text-align:center; padding:10px; background:#F0ECE6; border-radius: 4px;">⚠️ Connection issue. Result saved locally.</div>';
         }
 
         document.getElementById('studentReportContent').innerText = report;
